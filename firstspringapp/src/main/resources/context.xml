@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- The below tag is for Annotation - Comment Bean tags to use Annotation -->
+	<!-- <context:component-scan base-package="com.capgemini.app"/> -->
+
+<context:property-placeholder
+location="classpath:context.properties"/>
+
+	<bean id="organization"
+		class="com.capgemini.app.bean.Organization">
+		<property name="boardMembers">
+			<list>
+				<value>Shri Waman Kendre</value>
+				<value>Ms.Naman Oza</value>
+				<value>Shri Ramesh Patange</value>
+				<value>Shri Narendra Kohli</value>
+			</list>
+		</property>
+		<property name="branchManagers">
+			<map>
+				<entry key="IT" value="Akshay Kanade" />
+				<entry key="Marketing" value="Vinod singh" />
+				<entry key="Testing" value="Manish khair" />
+				<entry key="Research and Develpement" value="Praji takalkar" />
+			</map>
+		</property>
+
+		<property name="cities">
+			<set>
+				<value>Pune</value>
+				<value>Mumbai</value>
+				<value>Thane</value>
+				<value>Pimpri</value>
+			</set>
+		</property>
+
+		<property name="ipAddresses" value="${ipAddress}"> </property>
+		<property name="listed" value="true"></property>
+		<property name="name" value="punam"></property>
+		<property name="orgId" value="101"></property>
+		<property name="shareValue" value="200000.00"></property>
+		<property name="dateOfEstablishment">
+			<bean class="java.time.LocalDate" factory-method="now">
+			</bean>
+		</property>
+
+	</bean>
+
+
+
+</beans>
+
+
+
+
+
